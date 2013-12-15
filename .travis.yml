@@ -4,7 +4,8 @@ node_js:
 before_install:
   - "export PATH=\"$PATH:~/bin\""
   - time sudo pip install --use-mirrors -r ./test-infra/requirements.txt
-  - if [ "$TWBS_TEST" = validate-html ]; then time sudo apt-get install rubygems; fi
+  - if [ "$TWBS_TEST" = validate-html ]; then time sudo apt-get update; fi
+  - if [ "$TWBS_TEST" = validate-html ]; then time sudo apt-get install ruby; fi
   - if [ "$TWBS_TEST" = validate-html ]; then time sudo gem install bundler; fi
   - cp ./test-infra/gemrc ~/.gemrc
 install:
