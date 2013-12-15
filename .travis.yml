@@ -2,11 +2,14 @@ language: node_js
 node_js:
   - 0.10
 before_install:
+  - "export PATH=\"$PATH:~/bin\""
   - time sudo pip install --use-mirrors -r ./test-infra/requirements.txt
+  - if [ "$TWBS_TEST" = validate-html ]; then time sudo gem install bundler; fi
+  - cp ./test-infra/gemrc ~/.gemrc
 install:
-  - if [ "$TWBS_TEST" = validate-html ]; then time gem install jekyll; fi
   - time npm install -g grunt-cli
   - time ./test-infra/node_modules_cache.py download || time npm install
+  - if [ "$TWBS_TEST" = validate-html ]; then time bundle install --path=~/bundle --gemfile=./test-infra/Gemfile --binstubs=~/bin; fi
 after_script:
   - if [ "$TWBS_TEST" = core ]; then time ./test-infra/node_modules_cache.py upload; fi
 env:
