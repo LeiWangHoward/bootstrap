@@ -186,6 +186,7 @@ module.exports = function (grunt) {
     },
 
     jekyll: {
+      options: {bundleExec: !!process.env.TRAVIS},
       docs: {}
     },
 
