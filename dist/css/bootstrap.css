@@ -4794,9 +4794,7 @@ a.list-group-item-info.active:focus {
 .panel > .table-striped > tbody > tr:last-child td:first-child,
 .panel > .table-responsive > .table-striped > tbody > tr:last-child td:first-child,
 .panel > .table-striped > tbody > tr:last-child th:first-child,
-.panel > .table-responsive > .table-striped > tbody > tr:last-child th:first-child {
-  border-bottom-left-radius: 3px;
-}
+.panel > .table-responsive > .table-striped > tbody > tr:last-child th:first-child,
 .panel > .table-striped > tbody > tr:last-child td:last-child,
 .panel > .table-responsive > .table-striped > tbody > tr:last-child td:last-child,
 .panel > .table-striped > tbody > tr:last-child th:last-child,
